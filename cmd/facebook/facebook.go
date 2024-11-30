@@ -66,7 +66,7 @@ Example:
 
 			respone := utils.SendGet(url)
 
-			for _, id := range utils.Scans(respone, `(\d+_\d+)`) {
+			for _, id := range utils.Scans(respone, `(\d+_\d+)`, 0) {
 				fmt.Println(id)
 			}
 

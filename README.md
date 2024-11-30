@@ -30,5 +30,3 @@ echo %day%
 | `telegram`| This program uses the Telegram API to send messages. |
 | `wirepusher`| This program use WirePusher to send message.       |
 | `lineMsg`| This program use LINE Messaging API to send message.  |
-| `facebook`| This program posts a message to a Facebook page.     |
-| `threads`| This program posts messages to Threads.               |

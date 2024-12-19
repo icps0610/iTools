@@ -42,4 +42,5 @@ for /f "tokens=2 delims=," %%i in ('tasklist /fi "imagename eq %1" /fo csv') do 
     netstat -ano | findstr %%~i
 )
 ```
-`for /f "tokens=2 delims=," %i in ('tasklist /fi "imagename eq anydesk.exe" /fo csv') do ( netstat -ano | findstr %~i` 
+`for /f "tokens=2 delims=," %i in ('tasklist /fi "imagename eq anydesk.exe" /fo csv') do ( netstat -ano | findstr %~i)`  
+

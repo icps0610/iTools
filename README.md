@@ -1,6 +1,6 @@
 # tools
 
-``` cmd
+``` batch
 for /f "delims=" %a in ('now.exe -d') do set "day=%a"
 
 echo %day%
@@ -35,7 +35,7 @@ echo %day%
 --
 
 ## port lsit
-``` cmd
+``` batch
 @echo off
 setlocal enabledelayedexpansion
 for /f "tokens=2 delims=," %%i in ('tasklist /fi "imagename eq %1" /fo csv') do (

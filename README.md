@@ -30,3 +30,15 @@ echo %day%
 | `telegram`| This program uses the Telegram API to send messages. |
 | `wirepusher`| This program use WirePusher to send message.       |
 | `lineMsg`| This program use LINE Messaging API to send message.  |
+
+
+--
+
+## port lsit
+``` cmd
+@echo off
+setlocal enabledelayedexpansion
+for /f "tokens=2 delims=," %%i in ('tasklist /fi "imagename eq %1" /fo csv') do (
+    netstat -ano | findstr %%~i
+)
+```

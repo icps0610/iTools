@@ -68,7 +68,7 @@ func main() {
 
 		url := fmt.Sprintf(`https://wirepusher.com/send?id=%s&type=%s&title=%s&message=%s`, token, group, title, msg)
 
-		// fmt.Println(url)
+		fmt.Println(url)
 		utils.SendGet(url)
 	}
 

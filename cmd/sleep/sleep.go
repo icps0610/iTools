@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"tools/pkg/cmdutils"
 	"tools/pkg/utils"
 )
@@ -23,7 +21,6 @@ func main() {
 	// 主程式
 	{
 		seconds := utils.To_i(args[0]) * 1000
-		fmt.Println(seconds, `sec`)
 
 		utils.Sleep(seconds)
 	}

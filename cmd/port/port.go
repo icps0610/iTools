@@ -72,33 +72,24 @@ func main() {
 		}
 
 		// 主程式開始
-
-		var flag bool // 是否有回應
-		for _, ip := range utils.GetRange(ipStart, ipEnd) {
+		var flag bool
+		for ip := ipStart; ip <= ipEnd; ip++ {
 			lanIp := fmt.Sprintf(`%s.%v`, lan, ip)
-			response := utils.Ping(lanIp, wait)
 
-			if response {
-				fmt.Println(lanIp, "O")
-				flag = true
-				for _, portNumber := range ports {
-					msg := fmt.Sprintf(`%s %s`, lanIp, portNumber)
-					fmt.Print(msg)
-					err := utils.CheckPort(lanIp, portNumber, wait)
-					if err == nil {
-						fmt.Printf(" O\n")
-						flag = true
-					} else {
-						fmt.Printf(" X\n")
-						flag = false
-					}
+			for _, portNumber := range ports {
+				msg := fmt.Sprintf(`%s %s`, lanIp, portNumber)
+				fmt.Print(msg)
+				err := utils.CheckPort(lanIp, portNumber, wait)
+				if err == nil {
+					fmt.Printf(" O\n")
+					flag = true
+				} else {
+					fmt.Printf(" X\n")
 				}
-			} else {
-				fmt.Println(lanIp, "X")
-				flag = false
 			}
 			fmt.Println()
 		}
+
 		if flag {
 			os.Exit(0)
 		} else {
